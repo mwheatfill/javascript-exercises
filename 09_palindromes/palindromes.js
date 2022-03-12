@@ -1,12 +1,14 @@
 const palindromes = function (text) {
-  let array = text.toLowerCase().match(/[a-zA-Z]/g);
-  let forwardText = array.join('');
-  let reverseText = '';
+  processedText = text
+    .toLowerCase()
+    .replace(/[^a-z]/g, '')
 
-  for (i = array.length - 1; i >= 0; i--) {
-    reverseText += array[i];
-  }
-  return forwardText === reverseText;
+  return (
+    processedText
+      .split('')
+      .reverse()
+      .join('') == processedText
+  );
 };
 
 // Do not edit below this line
